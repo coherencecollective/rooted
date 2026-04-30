@@ -3667,6 +3667,9 @@ html, body { max-width: 100%; overflow-x: hidden; }
  <button class="tn-link" data-nav="feedback" onclick="renderFeedback()">Feedback</button>
  </nav>
  <div class="tn-actions">
+ <button class="tn-btn" onclick="shareRooted()" title="Send Rooted to Someone" aria-label="Send Rooted to Someone">
+ <svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+ </button>
  <button class="tn-btn" onclick="openSearch()">
  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="22" y2="22"/></svg>
  </button>
@@ -3740,6 +3743,10 @@ html, body { max-width: 100%; overflow-x: hidden; }
  <div class="more-item" onclick="closeMoreSheet();goTo('about')">
  <div class="more-icon" style="color:var(--terra)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg></div>
  <div><div class="more-item-label">Growing Roots</div><div class="more-item-sub">The story behind Rooted</div></div>
+ </div>
+ <div class="more-item" onclick="closeMoreSheet();shareRooted()">
+ <div class="more-icon" style="color:var(--amber)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></div>
+ <div><div class="more-item-label">Send Rooted to Someone</div><div class="more-item-sub">Share Rooted with a friend, sister, or church mama</div></div>
  </div>
  </div>
 </div><script>
@@ -8391,6 +8398,14 @@ function shareTwelve(id) {
  title: 'Rooted \u00b7 The Twelve \u00b7 ' + d.name,
  text: d.tag || '',
  urlPath: 'twelve/' + id
+ });
+}
+
+function shareRooted() {
+ sendToSomeone({
+ title: 'Rooted \u00b7 Daily Bible Study for Black Women',
+ text: 'A daily Bible study, prayer, and reflection space built for Black women. Where the Word meets our roots.',
+ urlPath: ''
  });
 }
 
